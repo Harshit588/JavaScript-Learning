@@ -23,7 +23,7 @@ console.log(typeof "Hello World"); // string
 console.log(typeof true); // boolean
 console.log(typeof null); // object
 console.log(typeof undefined); // undefined
-console.log(typeof Symbol("id")); // symbol
+console.log(typeof Symbol("id")); // symbol (unique identifier)
 console.log(typeof {name: "Harshit", age: 22}); // object
 console.log(typeof function() {}); // function
 
