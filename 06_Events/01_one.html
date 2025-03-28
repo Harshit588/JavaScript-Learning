@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    /*
+    // ++++++++++++ Old Fashion Code +++++++++++++
+        document.getElementById('photoshop').onclick = function () {
+            alert("Photoshop hu me...")
+        }
+    */
+    /*
+     //+++++++++++++++ New Fasgion Code +++++++++++++++
+        document.getElementById("photoshop").addEventListener("click", function () {
+            alert("phir se touch kra BC....")
+        })
+    */
+
+    /*
+        document.getElementById("images").addEventListener("click", function (e) {
+            console.log("Clicked in Image...");
+            // e.stopPropagation();
+            // e.stopPropagation() is used to stop the event from bubbling up to parent elements
+        }, true)
+        document.getElementById("owl").addEventListener("click", function (e) {
+            console.log("Clicked in OWL...");
+            // e.stopPropagation();
+            // e.stopPropagation() is used to stop the event from bubbling up to parent elements
+        }, true)
+    
+        // when its false out in console is Clicked in OWL... Clicked in Image...
+        // when its true out in console is Clicked in Image... Clicked in OWL...
+        // this is called event bubbling
+    
+        document.getElementById("google").addEventListener("click", function (e) {
+            e.preventDefault();
+            console.log("Clicked in Google...");
+            // e.preventDefault() is used to prevent the default action of the event
+        }, false) // output is Clicked in Image... Clicked in Google... 
+    
+        // e is the event object
+        // e.target is the element that triggered the event
+        // e.currentTarget is the element to which the event handler is attached
+        // e.stopPropagation() is used to stop the event from bubbling up to parent elements
+        // e.stopImmediatePropagation() is used to stop the event from bubbling up to parent elements and also prevent other handlers from being called
+        // e.preventDefault() is used to prevent the default action of the event
+        // e.target is the element that triggered the event
+        // e.currentTarget is the element to which the event handler is attached
+    */
+
+    // onclick image will remove from website->>
+    document.querySelector('#images').addEventListener("click", function (e) {
+        if (e.target.tagName === "IMG") {
+            alert("Image is removed");
+        }
+        // e.target is the element that triggered the event
+        //e.target.tagName is the tag name of the element that triggered the event
+        // e.target.tagName === "IMG" is used to check if the element that triggered the event is an image
+        // e.target.parentNode is the parent node of the element that triggered the event
+        // e.target.parentNode.remove() is used to remove the parent node of the element that triggered the event
+        e.target.parentNode.remove();
+
+    });
+
+    // onclick image will remove from website->>
+    document.querySelector("#google").addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Google is not allowed");
+    });
+
+</script>
+
+</html>
