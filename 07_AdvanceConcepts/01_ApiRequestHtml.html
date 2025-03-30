@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Baby</h1>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/Harshit588';
+    const xhr = new XMLHttpRequest();
+    xhr.open('Get', requestUrl)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data.avatar_url);
+            // prinnt the image
+            const img = document.createElement('img');
+            img.src = data.avatar_url;
+            img.alt = 'Image';
+            img.style.width = '200px';
+            img.style.height = '200px';
+            img.style.borderRadius = '50%';
+            img.style.marginTop = '20px';
+            img.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            img.style.display = 'block';
+            img.style.marginLeft = 'auto';
+            img.style.marginRight = 'auto';
+            img.style.transition = 'transform 0.2s';
+            img.style.cursor = 'pointer';
+        }
+    }
+    xhr.send();
+
+</script>
+
+</html>
