@@ -96,7 +96,7 @@
 //Fetch the Data come in URL 
 // Method one 
 async function GetAllUserFromUrl() {
- 
+
     try {
         const dataByUrl = await fetch('https://api.github.com/users')
         const jsonData = await dataByUrl.json()
@@ -114,7 +114,3 @@ fetch('https://api.github.com/users')
     }).then((data) => console.log(data))
     .catch((error) => console.log(error))
     .finally(() => console.log("Operation Done"))
-<<<<<<< HEAD
-=======
-
->>>>>>> ab4292bceff787932b0badb2ed4a643efb396e23
