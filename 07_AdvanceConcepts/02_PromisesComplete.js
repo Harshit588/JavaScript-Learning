@@ -114,3 +114,7 @@ fetch('https://api.github.com/users')
     }).then((data) => console.log(data))
     .catch((error) => console.log(error))
     .finally(() => console.log("Operation Done"))
+<<<<<<< HEAD
+=======
+
+>>>>>>> ab4292bceff787932b0badb2ed4a643efb396e23
