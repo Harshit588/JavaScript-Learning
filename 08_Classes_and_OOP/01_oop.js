@@ -31,7 +31,5 @@ console.log(user1.userName); // Harshit
 const user2 = new user('Dev', 'BigScale', 'Surat')
 console.log(user1.userName); //Harshit
 console.log(user2.userName); //Dev
-<<<<<<< HEAD
 
-=======
->>>>>>> ab4292bceff787932b0badb2ed4a643efb396e23
+
